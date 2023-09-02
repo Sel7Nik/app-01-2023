@@ -1,15 +1,14 @@
 import style from './app.module.css'
-import { Header } from './component/Header'
-import { Main } from './component/Main'
+import Header from './components/Header'
+import Nav from './components/Nav'
+import Profile from './components/Profile'
 
-const App = () => {
+export const App = () => {
   return (
-    <div className={style.app}>
-      <h1 className={style.title_1}>App</h1>
+    <div className={style.appWrapper}>
       <Header />
-      <Main />
-      <Main />
+      <Nav />
+      <Profile />
     </div>
   )
 }
-export default App

@@ -1,0 +1,9 @@
+.header {
+  padding: 10px;
+  grid-area: header;
+  background-color: lightgreen;
+}
+
+.logo__img {
+  width: 60px;
+}

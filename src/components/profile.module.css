@@ -1,0 +1,23 @@
+.main {
+  padding: 15px;
+  grid-area: main;
+  background-color: lightgrey;
+}
+
+.bg__img {
+  width: 100%;
+
+}
+
+.avatar {
+  display: flex;
+}
+
+.avatar img {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  border-radius: 50%;
+  border: 3px solid lightgreen;
+  box-shadow: -3px 3px 3px;
+}
