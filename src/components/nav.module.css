@@ -10,6 +10,11 @@
   margin-top: 10px;
 }
 
+.list__item.active .list__link {
+  color: red;
+
+}
+
 .list__item:last-child {
 
   margin-top: 30px;

@@ -4,7 +4,7 @@ const Nav = () => {
   return (
     <nav className={style.nav}>
       <ul className={style.list}>
-        <li className={style.list__item}>
+        <li className={`${style.list__item} ${style.active}`}>
           <a className={style.list__link} href="http://">
             Profile
           </a>
