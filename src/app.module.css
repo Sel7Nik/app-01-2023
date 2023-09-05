@@ -21,3 +21,10 @@ body {
   grid-area: nav;
   background-color: lightgreen;
 }
+
+
+.main {
+  padding: 15px;
+  grid-area: main;
+  background-color: lightgrey;
+}

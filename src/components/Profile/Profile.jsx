@@ -3,7 +3,7 @@ import style from './profile.module.css'
 
 const Profile = () => {
   return (
-    <main className={style.main}>
+    <>
       <img
         className={style.bg__img}
         src="https://demo.qodeinteractive.com/central/wp-content/uploads/2013/05/header.jpg"
@@ -19,7 +19,7 @@ const Profile = () => {
       </div>
 
       <MyPosts />
-    </main>
+    </>
   )
 }
 
