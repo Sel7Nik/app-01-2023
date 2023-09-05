@@ -1,0 +1,19 @@
+.post__area {
+  resize: none;
+  border: 2px solid lightgreen;
+  border-radius: 8px;
+}
+
+.post__list {
+  padding: 3px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.post__area {
+  display: block;
+  margin-bottom: 12px;
+  box-shadow: -4px 8px 5px green;
+}
