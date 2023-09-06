@@ -1,33 +1,36 @@
+import { Route, Routes, NavLink } from 'react-router-dom'
 import style from './nav.module.css'
+
+const setActive = ({ isActive }) => (isActive ? style['active-link'] : style.list__link)
 
 const Nav = () => {
   return (
     <nav className={style.nav}>
       <ul className={style.list}>
-        <li className={`${style.list__item} ${style.active}`}>
-          <a className={style.list__link} href="/profile">
+        <li className={`${style.list__item}`}>
+          <NavLink className={setActive} to="/profile">
             Profile
-          </a>
+          </NavLink>
         </li>
         <li className={style.list__item}>
-          <a className={style.list__link} href="/dialogs">
+          <NavLink className={setActive} to="/dialogs">
             Messages
-          </a>
+          </NavLink>
         </li>
         <li className={style.list__item}>
-          <a className={style.list__link} href="/news">
+          <NavLink className={setActive} to="/news">
             News
-          </a>
+          </NavLink>
         </li>
         <li className={style.list__item}>
-          <a className={style.list__link} href="music">
+          <NavLink className={setActive} to="/music">
             Music
-          </a>
+          </NavLink>
         </li>
         <li className={style.list__item}>
-          <a className={style.list__link} href="setting">
+          <NavLink className={setActive} to="/setting">
             Setting
-          </a>
+          </NavLink>
         </li>
       </ul>
     </nav>
