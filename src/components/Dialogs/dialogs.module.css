@@ -1,0 +1,25 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dialogs {
+
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.dialogs__list {}
+
+.dialog__item {
+  padding: 10px;
+}
+
+.messages__list {}
+
+.message__item {}
+
+.dialog__item.active {
+  color: red;
+}

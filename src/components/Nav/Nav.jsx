@@ -9,7 +9,7 @@ const Nav = () => {
           <CustomLink to="/profile">Profile</CustomLink>
         </li>
         <li className={style.list__item}>
-          <CustomLink to="/dialogs">Messages</CustomLink>
+          <CustomLink to="/dialogs/">Messages</CustomLink>
         </li>
         <li className={style.list__item}>
           <CustomLink to="/news">News</CustomLink>
