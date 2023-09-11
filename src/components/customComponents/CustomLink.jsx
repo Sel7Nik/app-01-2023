@@ -4,7 +4,6 @@ import React from 'react'
 
 const CustomLink = ({ children, to, ...props }) => {
   const match = useMatch(to)
-  console.log(match)
   return (
     <Link to={to} style={{ color: match ? 'red' : 'white' }} {...props}>
       {children}
