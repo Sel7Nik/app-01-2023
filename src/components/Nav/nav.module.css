@@ -3,7 +3,10 @@
   background-color: rgb(57, 109, 4);
 }
 
-.list {}
+.list {
+
+  padding-left: 25px;
+}
 
 .list__item {
   list-style: none;

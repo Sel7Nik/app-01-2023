@@ -1,3 +1,7 @@
+.post {
+  padding-left: 25px;
+}
+
 .post__area {
   resize: none;
   border: 2px solid lightgreen;

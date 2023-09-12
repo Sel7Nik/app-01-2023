@@ -1,10 +1,13 @@
 .bg__img {
   width: 100%;
+  border-radius: 5px;
 
 }
 
 .avatar {
   display: flex;
+  flex-direction: column;
+  padding: 10px 25px;
 }
 
 .avatar img {
