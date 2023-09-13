@@ -4,16 +4,7 @@ import Post from './Post/Post'
 import ava_01 from './../../../img/avatar001.jpg'
 import ava_02 from './../../../img/avatar002.jpg'
 
-const postsData = [
-  { id: 1, name: 'post 22', likesCount: 22 },
-  { id: 2, name: 'post 44', likesCount: 32 },
-  { id: 3, name: 'post 66', likesCount: 12 },
-  { id: 4, name: 'post 22', likesCount: 21 },
-  { id: 5, name: 'post 22', likesCount: 222 },
-  { id: 6, name: 'post 22', likesCount: 252 },
-]
-
-const MyPost = () => {
+const MyPosts = (props) => {
   return (
     <div className={style.post}>
       <h3 className="post__title_H33">My Posts</h3>
@@ -31,12 +22,12 @@ const MyPost = () => {
         <button className={style.post__button}>Удалить</button>
       </div>
       <ul className={style.post__list}>
-        {postsData.map((p) => (
-          <Post message={p.message} avatar={ava_02} likesCount={p.likesCount} />
+        {props.posts.map((p) => (
+          <Post message={p.message} avatar={ava_02} likesCount={p.likesCount} key={p.id} />
         ))}
       </ul>
     </div>
   )
 }
 
-export default MyPost
+export default MyPosts
