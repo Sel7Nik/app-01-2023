@@ -5,6 +5,12 @@ import ava_01 from './../../../img/avatar001.jpg'
 import ava_02 from './../../../img/avatar002.jpg'
 
 const MyPosts = (props) => {
+  const newPostElement = React.createRef()
+
+  const addPost = () => {
+    const text = newPostElement.current.value
+    alert(text)
+  }
   return (
     <div className={style.post}>
       <h3 className="post__title_H33">My Posts</h3>
@@ -13,12 +19,14 @@ const MyPosts = (props) => {
         <textarea
           className={style.post__area}
           name="newPost"
-          id=""
+          ref={newPostElement}
           cols="50"
           rows="6"
           placeholder="enter your messages"
         ></textarea>
-        <button className={style.post__button}>Добавить</button>
+        <button className={style.post__button} onClick={addPost}>
+          Добавить
+        </button>
         <button className={style.post__button}>Удалить</button>
       </div>
       <ul className={style.post__list}>
