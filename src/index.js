@@ -1,12 +1,4 @@
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { App } from './App'
 import { state } from './redux/state'
-import './index.css'
+import { renderEntireTree } from './render'
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(
-  <BrowserRouter>
-    <App state={state} />
-  </BrowserRouter>
-)
+renderEntireTree(state)

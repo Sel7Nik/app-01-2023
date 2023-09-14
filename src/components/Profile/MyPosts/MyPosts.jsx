@@ -7,9 +7,11 @@ import ava_02 from './../../../img/avatar002.jpg'
 const MyPosts = (props) => {
   const newPostElement = React.createRef()
 
+  // const { posts, addPost } = props
+
   const addPost = () => {
     const text = newPostElement.current.value
-    alert(text)
+    props.addPost(text)
   }
   return (
     <div className={style.post}>

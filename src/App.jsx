@@ -8,7 +8,10 @@ import Setting from './components/Setting/Setting'
 import logo from './img/logo.svg'
 
 export const App = (props) => {
-  const { messagesData, dialogsData, postsData } = props.state
+  const { messages, dialogs } = props.state.dialogsPage
+  const { posts } = props.state.profilePage
+  const { addPost } = props
+  // debugger
   return (
     // так можно задать класс с тире
     <div className={style['app__wrapper']}>
@@ -17,8 +20,8 @@ export const App = (props) => {
       <main className={style.main}>
         <Routes>
           <Route path="/" element={<Profile />} />
-          <Route path="/profile" element={<Profile posts={postsData} />} />
-          <Route path="/dialogs/*" element={<Dialogs messages={messagesData} dialogs={dialogsData} />} />
+          <Route path="/profile" element={<Profile posts={posts} addPost={addPost} />} />
+          <Route path="/dialogs/*" element={<Dialogs messages={messages} dialogs={dialogs} />} />
           {/* <Route path="/news" element={<Profile />} /> */}
           {/* <Route path="/music" element={<Dialogs />} /> */}
           <Route path="/setting" element={<Setting />} />
