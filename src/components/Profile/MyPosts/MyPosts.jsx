@@ -10,9 +10,13 @@ const MyPosts = (props) => {
   // const { posts, addPost } = props
 
   const addPost = () => {
-    const text = newPostElement.current.value
-    props.addPost(text)
+    props.addPost()
   }
+  const onPostChange = () => {
+    const text = newPostElement.current.value
+    props.updateNewPostText(text)
+  }
+
   return (
     <div className={style.post}>
       <h3 className="post__title_H33">My Posts</h3>
@@ -20,12 +24,14 @@ const MyPosts = (props) => {
       <div className="add__post">
         <textarea
           className={style.post__area}
+          onChange={onPostChange}
           name="newPost"
           ref={newPostElement}
+          value={props.newPostText}
           cols="50"
           rows="6"
           placeholder="enter your messages"
-        ></textarea>
+        />
         <button className={style.post__button} onClick={addPost}>
           Добавить
         </button>
