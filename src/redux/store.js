@@ -1,3 +1,5 @@
+const ADD_POST = 'ADD-POST'
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 export let store = {
   _state: {
     dialogsPage: {
@@ -63,6 +65,19 @@ export let store = {
         break
     }
   },
+}
+
+export const addPostActionCreator = () => {
+  return {
+    type: ADD_POST,
+  }
+}
+
+export const updateNewPostTextActionCreator = (text) => {
+  return {
+    type: UPDATE_NEW_POST_TEXT,
+    newText: text,
+  }
 }
 
 window.store = store

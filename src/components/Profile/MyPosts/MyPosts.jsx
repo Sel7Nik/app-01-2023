@@ -2,7 +2,7 @@ import React from 'react'
 import style from './MyPosts.module.css'
 import Post from './Post/Post'
 import ava_01 from './../../../img/avatar001.jpg'
-import ava_02 from './../../../img/avatar002.jpg'
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/store'
 
 const MyPosts = (props) => {
   const newPostElement = React.createRef()
@@ -10,11 +10,11 @@ const MyPosts = (props) => {
   // const { posts, addPost } = props
 
   const addPost = () => {
-    props.dispatch({ type: 'ADD-POST' })
+    props.dispatch(addPostActionCreator())
   }
   const onPostChange = () => {
     const text = newPostElement.current.value
-    props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text })
+    props.dispatch(updateNewPostTextActionCreator(text))
   }
 
   return (
@@ -39,7 +39,7 @@ const MyPosts = (props) => {
       </div>
       <ul className={style.post__list}>
         {props.posts.map((p) => (
-          <Post message={p.message} avatar={ava_02} likesCount={p.likesCount} key={p.id} />
+          <Post message={p.message} avatar={ava_01} likesCount={p.likesCount} key={p.id} />
         ))}
       </ul>
     </div>
