@@ -31,31 +31,37 @@ export let store = {
     },
     sidebar: {},
   },
+  _callSubscriber() {},
 
   getState() {
     return this._state
   },
-
-  _callSubscriber() {},
-
-  addPost() {
-    let newPost = {
-      id: 7,
-      message: this._state.profilePage.newPostText,
-      likesCount: 0,
-    }
-    this._state.profilePage.newPostText = ''
-    this._state.profilePage.posts.push(newPost)
-    this._callSubscriber(this._state)
-  },
-
-  updateNewPostText(newText) {
-    this._state.profilePage.newPostText = newText
-    this._callSubscriber(this._state)
-  },
-
   subscribe(observer) {
     this._callSubscriber = observer
+  },
+
+  dispatch(action) {
+    switch (action.type) {
+      case 'ADD-POST':
+        let newPost = {
+          id: 7,
+          message: this._state.profilePage.newPostText,
+          likesCount: 0,
+        }
+        this._state.profilePage.newPostText = ''
+        this._state.profilePage.posts.push(newPost)
+        this._callSubscriber(this._state)
+
+        break
+
+      case 'UPDATE-NEW-POST-TEXT':
+        this._state.profilePage.newPostText = action.newText
+        this._callSubscriber(this._state)
+
+        break
+      default:
+        break
+    }
   },
 }
 

@@ -10,8 +10,7 @@ import logo from './img/logo.svg'
 export const App = (props) => {
   const { messages, dialogs } = props.state.dialogsPage
   const { posts, newPostText } = props.state.profilePage
-  const { addPost, updateNewPostText } = props
-  // debugger
+  const { dispatch } = props
   return (
     // так можно задать класс с тире
     <div className={style['app__wrapper']}>
@@ -20,17 +19,7 @@ export const App = (props) => {
       <main className={style.main}>
         <Routes>
           <Route path="/" element={<Profile />} />
-          <Route
-            path="/profile"
-            element={
-              <Profile
-                posts={posts}
-                newPostText={newPostText}
-                addPost={addPost}
-                updateNewPostText={updateNewPostText}
-              />
-            }
-          />
+          <Route path="/profile" element={<Profile dispatch={dispatch} posts={posts} newPostText={newPostText} />} />
           <Route path="/dialogs/*" element={<Dialogs messages={messages} dialogs={dialogs} />} />
           {/* <Route path="/news" element={<Profile />} /> */}
           {/* <Route path="/music" element={<Dialogs />} /> */}
