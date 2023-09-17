@@ -1,7 +1,7 @@
 import styles from './dialogs.module.css'
 import { Dialog } from './Dialog/Dialog'
 import { Message } from './Message/Message'
-import { sendMessageCreater, updateNewMessageBodyCreator } from '../../redux/store'
+import { sendMessageCreater, updateNewMessageBodyCreator } from '../../redux/dialogs-reducer'
 
 const Dialogs = (props) => {
   const addMessage = () => {
