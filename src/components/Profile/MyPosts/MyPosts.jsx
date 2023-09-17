@@ -7,8 +7,6 @@ import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../r
 const MyPosts = (props) => {
   const newPostElement = React.createRef()
 
-  // const { posts, addPost } = props
-
   const addPost = () => {
     props.dispatch(addPostActionCreator())
   }
