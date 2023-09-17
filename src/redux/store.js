@@ -2,11 +2,6 @@ import { dialogsReducer } from './dialogs-reducer'
 import { profileReducer } from './profile-reducer'
 import { sidebarReducer } from './sidebar-reducer'
 
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
-const SEND_MESSAGE = 'SEND-MESSAGE'
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
-
 export let store = {
   _state: {
     dialogsPage: {
