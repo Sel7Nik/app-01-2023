@@ -2,12 +2,12 @@ import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../r
 import MyPosts from './MyPosts'
 
 export const MyPostsContainer = (props) => {
-  const { posts, newPostText } = props
+  const { posts, newPostText } = props.store.getState().profilePage
   const addPost = () => {
-    props.dispatch(addPostActionCreator())
+    props.store.dispatch(addPostActionCreator())
   }
   const onPostChange = (text) => {
-    props.dispatch(updateNewPostTextActionCreator(text))
+    props.store.dispatch(updateNewPostTextActionCreator(text))
   }
   return <MyPosts updateNewPostText={onPostChange} onAddPost={addPost} posts={posts} newPostText={newPostText} />
 }

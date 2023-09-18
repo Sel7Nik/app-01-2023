@@ -5,25 +5,24 @@ import { sendMessageCreater, updateNewMessageBodyCreator } from '../../redux/dia
 
 const Dialogs = (props) => {
   const addMessage = () => {
-    props.dispatch(sendMessageCreater())
+    props.store.dispatch(sendMessageCreater())
   }
 
   const onMessageChange = (event) => {
-    // const body = newMessageElement.current.value
     const body = event.currentTarget.value
-    props.dispatch(updateNewMessageBodyCreator(body))
+    props.store.dispatch(updateNewMessageBodyCreator(body))
   }
 
   return (
     <div className={styles.dialogs}>
       <ul className={styles.dialogs__list}>
-        {props.dialogs.map((d) => (
+        {props.store.getState().dialogsPage.dialogs.map((d) => (
           <Dialog id={d.id} name={d.name} key={d.id} />
         ))}
       </ul>
 
       <ul className={styles.messages__list}>
-        {props.messages.map((m) => (
+        {props.store.getState().dialogsPage.messages.map((m) => (
           <Message id={m.id} message={m.message} key={m.id} />
         ))}
       </ul>
@@ -32,7 +31,7 @@ const Dialogs = (props) => {
           <textarea
             onChange={onMessageChange}
             name=""
-            value={props.newMessageBody}
+            value={props.store.getState().dialogsPage.newMessageBody}
             id=""
             cols="50"
             rows="6"
