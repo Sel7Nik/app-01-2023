@@ -1,18 +1,14 @@
-import React from 'react'
 import style from './MyPosts.module.css'
 import Post from './Post/Post'
 import ava_01 from './../../../img/avatar001.jpg'
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profile-reducer'
 
 const MyPosts = (props) => {
-  const newPostElement = React.createRef()
-
-  const addPost = () => {
-    props.dispatch(addPostActionCreator())
+  const onAddPost = () => {
+    props.onAddPost()
   }
-  const onPostChange = () => {
-    const text = newPostElement.current.value
-    props.dispatch(updateNewPostTextActionCreator(text))
+  const onPostChange = (event) => {
+    const text = event.target.value
+    props.updateNewPostText(text)
   }
 
   return (
@@ -24,13 +20,12 @@ const MyPosts = (props) => {
           className={style.post__area}
           onChange={onPostChange}
           name="newPost"
-          ref={newPostElement}
           value={props.newPostText}
           cols="50"
           rows="6"
           placeholder="enter your messages"
         />
-        <button className={style.post__button} onClick={addPost}>
+        <button className={style.post__button} onClick={onAddPost}>
           Добавить
         </button>
         <button className={style.post__button}>Удалить</button>

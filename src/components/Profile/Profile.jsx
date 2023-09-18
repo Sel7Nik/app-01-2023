@@ -1,4 +1,4 @@
-import MyPosts from './MyPosts/MyPosts'
+import { MyPostsContainer } from './MyPosts/MyPostsContainer'
 import { ProfileInfo } from './ProfileInfo/ProfileInfo'
 // import style from './profile.module.css'
 const Profile = (props) => {
@@ -6,7 +6,7 @@ const Profile = (props) => {
   return (
     <>
       <ProfileInfo />
-      <MyPosts posts={posts} newPostText={newPostText} dispatch={dispatch} />
+      <MyPostsContainer posts={posts} newPostText={newPostText} dispatch={dispatch} />
       {/* <MyPosts posts={posts} newPostText={newPostText} /> */}
     </>
   )
