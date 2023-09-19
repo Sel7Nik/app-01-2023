@@ -3,6 +3,8 @@ import { Dialog } from './Dialog/Dialog'
 import { Message } from './Message/Message'
 
 export const Dialogs = (props) => {
+  const { dialogs, messages, newMessageBody } = props.dialogsPage
+
   const onAddMessage = () => {
     props.addMessage()
   }
@@ -11,17 +13,16 @@ export const Dialogs = (props) => {
     const body = event.currentTarget.value
     props.updateMessageChange(body)
   }
-
   return (
     <div className={styles.dialogs}>
       <ul className={styles.dialogs__list}>
-        {props.dialogs.map((d) => (
+        {dialogs.map((d) => (
           <Dialog id={d.id} name={d.name} key={d.id} />
         ))}
       </ul>
 
       <ul className={styles.messages__list}>
-        {props.messages.map((m) => (
+        {messages.map((m) => (
           <Message id={m.id} message={m.message} key={m.id} />
         ))}
       </ul>
@@ -30,7 +31,7 @@ export const Dialogs = (props) => {
           <textarea
             onChange={onChangeMessage}
             name=""
-            value={props.newMessageBody}
+            value={newMessageBody}
             id=""
             cols="50"
             rows="6"

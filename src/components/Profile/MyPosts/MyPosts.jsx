@@ -3,6 +3,8 @@ import Post from './Post/Post'
 import ava_01 from './../../../img/avatar001.jpg'
 
 const MyPosts = (props) => {
+  const { newPostText, posts } = props.profilePage
+
   const onAddPost = () => {
     props.onAddPost()
   }
@@ -20,7 +22,7 @@ const MyPosts = (props) => {
           className={style.post__area}
           onChange={onPostChange}
           name="newPost"
-          value={props.newPostText}
+          value={newPostText}
           cols="50"
           rows="6"
           placeholder="enter your messages"
@@ -31,7 +33,7 @@ const MyPosts = (props) => {
         <button className={style.post__button}>Удалить</button>
       </div>
       <ul className={style.post__list}>
-        {props.posts.map((p) => (
+        {posts.map((p) => (
           <Post message={p.message} avatar={ava_01} likesCount={p.likesCount} key={p.id} />
         ))}
       </ul>
