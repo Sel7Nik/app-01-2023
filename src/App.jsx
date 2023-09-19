@@ -18,8 +18,8 @@ export const App = (props) => {
       <main className={style.main}>
         <Routes>
           <Route path="/" element={<Profile />} />
-          <Route path="/profile" element={<Profile store={store} />} />
-          <Route path="/dialogs/*" element={<DialogsComponent store={store} />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/dialogs/*" element={<DialogsComponent />} />
           {/* <Route path="/news" element={<Profile />} /> */}
           {/* <Route path="/music" element={<Dialogs />} /> */}
           <Route path="/setting" element={<Setting />} />
