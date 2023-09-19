@@ -7,9 +7,7 @@ import Profile from './components/Profile/Profile'
 import Setting from './components/Setting/Setting'
 import logo from './img/logo.svg'
 
-export const App = (props) => {
-  const { store } = props
-
+export const App = () => {
   return (
     // так можно задать класс с тире
     <div className={style['app__wrapper']}>
