@@ -8,18 +8,10 @@ import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
-const renderEntireTree = (state) => {
-  root.render(
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>
-  )
-}
-
-renderEntireTree(store.getState())
-
-store.subscribe(() => {
-  renderEntireTree(store.getState())
-})
+root.render(
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>
+)
