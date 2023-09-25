@@ -12,11 +12,11 @@ const Nav = () => {
           <CustomLink to="/dialogs/">Messages</CustomLink>
         </li>
         <li className={style.list__item}>
-          <CustomLink to="/news">News</CustomLink>
+          <CustomLink to="/users">Users</CustomLink>
         </li>
-        <li className={style.list__item}>
+        {/* <li className={style.list__item}>
           <CustomLink to="/music">Music</CustomLink>
-        </li>
+        </li> */}
         <li className={style.list__item}>
           <CustomLink to="/setting">Setting</CustomLink>
         </li>

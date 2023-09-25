@@ -6,6 +6,7 @@ import { DialogsContainer } from './components/Dialogs/DialogsContainer'
 import Profile from './components/Profile/Profile'
 import Setting from './components/Setting/Setting'
 import logo from './img/logo.svg'
+import { UsersContainer } from './components/Users/UsersContainer'
 
 export const App = () => {
   return (
@@ -18,7 +19,7 @@ export const App = () => {
           <Route path="/" element={<Profile />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/dialogs/*" element={<DialogsContainer />} />
-          {/* <Route path="/news" element={<Profile />} /> */}
+          <Route path="/users" element={<UsersContainer />} />
           {/* <Route path="/music" element={<Dialogs />} /> */}
           <Route path="/setting" element={<Setting />} />
         </Routes>
