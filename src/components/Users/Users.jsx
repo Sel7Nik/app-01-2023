@@ -2,16 +2,23 @@ import styles from './users.module.css'
 import './users.css'
 import userAvatar from './../../assets/image/user-avatar.png'
 import axios from 'axios'
+import Button from './../Button/Button'
 
 export const Users = (props) => {
-  if (props.users.length === 0) {
-    axios.get('https://social-network.samuraijs.com/api/1.0/users').then((response) => {
-      props.setUsers(response.data.items)
-    })
+  const getUsers = () => {
+    if (props.users.length === 0) {
+      axios.get('https://social-network.samuraijs.com/api/1.0/users').then((response) => {
+        props.setUsers(response.data.items)
+      })
+    }
   }
   return (
     <div className={styles.section}>
       <h3 className={`${styles['section-title']} ${'title'}`}>Users</h3>
+      {/* <button onClick={getUsers}>get Users</button> */}
+      <div>
+        <Button func={getUsers}>getUsers</Button>
+      </div>
       {/* <h3 className={styles['section-title']}>Users</h3> */}
       {props.users.map((user) => (
         <div className={styles.users} key={user.id}>

@@ -6,7 +6,7 @@ const Button = (props) => {
     <button
       className={styles.customButton}
       onClick={() => {
-        props.unFollow(props.user)
+        props.func()
       }}
     >
       {props.children}
