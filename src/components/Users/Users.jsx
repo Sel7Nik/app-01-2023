@@ -1,6 +1,6 @@
 import styles from './users.module.css'
 import './users.css'
-import userAvatar from './../../assets/image/user-avatar.png'
+import userAvatar from '../../assets/image/user-avatar.png'
 
 export const Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
