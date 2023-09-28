@@ -6,7 +6,7 @@ import { DialogsContainer } from './components/Dialogs/DialogsContainer'
 import Profile from './components/Profile/Profile'
 import Setting from './components/Setting/Setting'
 import logo from './img/logo.svg'
-import { UsersContainer } from './components/Users/UsersContainer'
+import UsersContainer from './components/Users/UsersContainer'
 
 export const App = () => {
   return (

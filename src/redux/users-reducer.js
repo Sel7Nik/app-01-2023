@@ -53,7 +53,7 @@ export const followAC = (userId) => ({
   type: FOLLOW,
   userId,
 })
-export const unFollowAC = (userId) => ({
+export const unfollowAC = (userId) => ({
   type: UNFOLLOW,
   userId,
 })
