@@ -1,7 +1,6 @@
 img {
   height: 55px;
   margin-bottom: 20px;
-
 }
 
 .photo {}
@@ -13,7 +12,6 @@ img {
 
 .section-title {
   font-size: 24px;
-
 }
 
 .section-title {
@@ -25,8 +23,6 @@ img {
   grid-template-columns: 80px 1fr;
   margin-bottom: 18px;
   text-align: center;
-
-
 }
 
 .descr {
@@ -37,7 +33,6 @@ img {
   border-radius: 15px;
   text-align: center;
   margin-left: 30px;
-
 }
 
 .name, .location {
@@ -48,4 +43,21 @@ img {
 
 .fullName {
   font-size: 22px;
+}
+
+.selectedPage {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.number {
+
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
 }
