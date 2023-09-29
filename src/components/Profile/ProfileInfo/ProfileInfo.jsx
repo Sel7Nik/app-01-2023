@@ -1,6 +1,6 @@
 import style from './profileInfo.module.css'
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
   return (
     <div>
       <img
@@ -13,6 +13,7 @@ const ProfileInfo = () => {
 
         <div className={style.description}>
           <h2 className={style.name}>NikName</h2>
+          <img src={props.profile.photos.large} alt="" />
         </div>
       </div>
     </div>
