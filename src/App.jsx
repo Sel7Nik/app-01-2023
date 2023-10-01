@@ -1,5 +1,4 @@
 import style from './app.module.css'
-import Header from './components/Header/Header'
 import Nav from './components/Nav/Nav'
 import { Route, Routes } from 'react-router-dom'
 import { DialogsContainer } from './components/Dialogs/DialogsContainer'
@@ -7,12 +6,13 @@ import Setting from './components/Setting/Setting'
 import logo from './img/logo.svg'
 import UsersContainer from './components/Users/UsersContainer'
 import ProfileContainer from './components/Profile/ProfileContainer'
+import HeaderContainer from './components/Header/HeaderContainer'
 
 export const App = () => {
   return (
     // так можно задать класс с тире
     <div className={style['app__wrapper']}>
-      <Header logo={logo} />
+      <HeaderContainer logo={logo} />
       <Nav />
       <main className={style.main}>
         <Routes>
