@@ -1,6 +1,8 @@
+import { Preloader } from '../../commonComponents/Preloader/Preloader'
 import style from './profileInfo.module.css'
 
-const ProfileInfo = (props) => {
+export const ProfileInfo = (props) => {
+  if (!props.profile) return Preloader
   return (
     <div>
       <img
@@ -9,15 +11,14 @@ const ProfileInfo = (props) => {
         alt="flowers"
       />
       <div className={style.avatar}>
-        <img src="https://gocsgo.net/wp-content/uploads/2022/01/69.jpg" alt="avatar" />
+        <img src={props.profile.photos.large} alt="avatar" />
 
         <div className={style.description}>
-          <h2 className={style.name}>NikName</h2>
-          <img src={props.profile.photos.large} alt="" />
+          <h2 className={style.name}>{props.profile.fullName}</h2>
+          <p className={style.text}>{props.profile.aboutMe}</p>
+          <img src={props.profile.photos.small} alt="avatar" />
         </div>
       </div>
     </div>
   )
 }
-
-export { ProfileInfo }
